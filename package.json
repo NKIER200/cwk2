@@ -1,0 +1,16 @@
+{
+  "name": "coursework-2",
+  "version": "1.0.0",
+  "description": "Image for coursework2",
+  "author": "Nathan Kier <NKIER200@Github.com>",
+  "licence": "MIT",
+  "main": "app.js",
+  "keywords": [
+    "nodejs",
+    "bootstrap",
+    "express"
+  ],
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
