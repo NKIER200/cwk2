@@ -4,19 +4,18 @@
   become: yes
   tasks:
     - name: 1. Update APT Package Manager
+      shell: 
+          cmd: sudo apt-get update
+    - name: 2. package
+      apt:
+        name: apt-transport-https
+    - name: 3. curling
+      shell: 
+         cmd:  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+    - name: 4. Permissions
       shell:
-          cmd: sudo apt-get update && sudo apt-get install -y apt-transport-https
-    - name: 2. Get aptkey
-      shell:
-          cmd: curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add-
-    - name: 3. Permissions
-      shell:
-         cmd: echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-
-    - name: 4. Install
-      shell:
-         cmd: sudo apt-get update
-
+         cmd: echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list   
     - name: 5. Start
-      shell: sudo apt-get install -y kubectl 
+      apt: 
+         name: kubectl 
 

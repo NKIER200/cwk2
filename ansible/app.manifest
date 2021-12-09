@@ -1,0 +1,10 @@
+ apiVersion: v1
+ kind: Pod
+ metadata:
+    name: redis-pod
+ spec:
+    containers:
+    - name: container01
+      image: nkier200/nodejs-cwk2:latest
+      ports:
+      - containerPort: 80 

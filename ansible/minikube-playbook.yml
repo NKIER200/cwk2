@@ -15,5 +15,8 @@
     - name: 4. Install
       shell:
          cmd: sudo mv minikube /usr/local/bin/  
-  
+    - name: 5. Run
+      become: no
+      shell:
+         cmd: minikube start  
 
