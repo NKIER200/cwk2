@@ -1,0 +1,19 @@
+- name: A playbook to install minikube on a VM
+  hosts: localhost
+  user: ubuntu
+  become: yes
+  tasks:
+    - name: 1. Update APT Package Manager
+      shell:
+          cmd: sudo apt-get update
+    - name: 2. download
+      shell:
+          cmd: curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    - name: 3. Permissions
+      shell:
+         cmd: chmod +x minikube
+    - name: 4. Install
+      shell:
+         cmd: sudo mv minikube /usr/local/bin/  
+  
+
