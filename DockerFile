@@ -1,3 +1,4 @@
+
 FROM node:10-alpine
 
 RUN mkdir -p /cwk2/node_modules && chown -R node:node /cwk2

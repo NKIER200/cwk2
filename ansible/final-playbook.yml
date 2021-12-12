@@ -1,0 +1,34 @@
+- name: A Final playboo for kubernetes on a VM
+  hosts: localhost
+  user: ubuntu
+  become: yes
+  tasks:
+    - name: 1. delete deployment
+      become: no
+      shell:
+         cmd: kubectl delete deploy kubernetes-cwk2
+    - name: 2. create deployment
+      become: no
+      shell:
+          cmd: kubectl create deployment kubernetes-cwk2 --image=nkier200/nodejs-cwk2
+    - name: 3. get deployments
+      become: no
+      shell:
+         cmd: kubectl get deployments
+    - name: 4. delete service
+      become: no
+      shell:
+          cmd: kubectl delete svc node-port-cwk2
+    - name: 5. create service
+      become: no
+      shell:
+          cmd: kubectl expose deployment/kubernetes-cwk2 --type="NodePort" --port 8080 --name node-port-cwk2
+    - name: 6. get services
+      become: no
+      shell:
+         cmd: kubectl get services
+    - name: 7. scale deployment
+      become: no
+      shell:
+          cmd: kubectl scale deployments/kubernetes-cwk2 --replicas=4
+
