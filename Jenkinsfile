@@ -1,6 +1,6 @@
 node {
     def cwk2
-
+    def ip = -172-31-18-127 
     stage('Clone repository') {
       
 
@@ -31,7 +31,7 @@ node {
 
 stage('Update k8s deployment') {
   cwk2.inside {
-    sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image nkier200/nodejs-cw2 cwk2=$imageName:$version"
+    sh 'ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image nkier200/nodejs-cw2 cwk2=$imageName:$version'
   }
 }   
 }
