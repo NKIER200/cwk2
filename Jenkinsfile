@@ -28,10 +28,5 @@ node {
             cwk2.push("latest")
         }
     }
-    stage('Deploy') {
-            cw2.inside {
-               sh  'echo "Deploying...."'
-            }
-        }
 
 }
