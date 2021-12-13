@@ -29,11 +29,9 @@ node {
         }
     }
 
-stage('Deploying App') {
-     
-       script {
-               kubernetesDeploy(configs: "minikube-playbook.yml", kubeconfigId: "kubernetes")
-      }
-     }
-   
+stage('Update k8s deployment') {
+  steps {
+    sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image nkier200/nodejs-cw2 cwk2=$imageName:$version"
+  }
+}   
 }
