@@ -13,7 +13,7 @@ node {
     }
 
     stage('Test image') {
-  
+        cwk2.run()  
         cwk2.inside {
             sh 'node --version'
             sh 'echo "Tests passed"'
