@@ -16,7 +16,6 @@ node {
   
         cwk2.inside {
             sh 'node --version'
-            sh 'docker ps'         
             sh 'echo "Tests passed"'
 
         }
