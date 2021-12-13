@@ -29,10 +29,9 @@ node {
         }
     }
     stage('Deploying App') {
-      steps {
+     
        script {
                kubernetesDeploy(configs: "final-playbook.yml", kubeconfigId: "kubernetes")
-       }
       }
      }
 }
