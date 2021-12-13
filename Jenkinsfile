@@ -29,8 +29,8 @@ node {
         }
     }
     stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+            cw2.inside {
+               sh  'echo "Deploying...."'
             }
         }
 
