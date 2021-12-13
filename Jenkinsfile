@@ -1,6 +1,7 @@
 node {
     def cwk2
-    def ip = -172-31-18-127 
+    def ip = -172-31-18-127
+    def ssh = SHA256:Lk6zZu7rNHyCtIJ/4AL0ARegNKibn07B58a1a2ydJCQ 
     stage('Clone repository') {
       
 
