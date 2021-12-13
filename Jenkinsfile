@@ -32,7 +32,7 @@ node {
 stage('Deploying App') {
      
        script {
-               kubernetesDeploy(configs: "mini-playbook.yml", kubeconfigId: "kubernetes")
+               kubernetesDeploy(configs: "minikube-playbook.yml", kubeconfigId: "kubernetes")
       }
      }
    
