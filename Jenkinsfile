@@ -30,7 +30,7 @@ node {
     }
 
 stage('Update k8s deployment') {
-  steps {
+  cwk2.inside {
     sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image nkier200/nodejs-cw2 cwk2=$imageName:$version"
   }
 }   
