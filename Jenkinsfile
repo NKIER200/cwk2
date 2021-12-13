@@ -14,7 +14,6 @@ node {
 
     stage('Test image') {
   
-        cwk2 = ("docker run --rm --name nodejs-image-demontime2  -p 80:80 -d nkier200/nodejs-cwk2")
         cwk2.inside {
          
             sh 'echo "Tests passed"'
@@ -29,4 +28,10 @@ node {
             cwk2.push("latest")
         }
     }
+    stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+
 }
