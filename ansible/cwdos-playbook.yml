@@ -1,4 +1,4 @@
-- name: A playbook to install minikube on a VM
+- name: A playbook to install kubectl  on a VM
   hosts: localhost
   user: ubuntu
   become: yes
