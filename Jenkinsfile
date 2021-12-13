@@ -28,10 +28,12 @@ node {
             cwk2.push("latest")
         }
     }
-    stage('Deploying App') {
+
+stage('Deploying App') {
      
        script {
-               kubernetesDeploy(configs: "final-playbook.yml", kubeconfigId: "kubernetes")
+               kubernetesDeploy(configs: "mini-playbook.yml", kubeconfigId: "kubernetes")
       }
      }
+   
 }
