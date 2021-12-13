@@ -15,7 +15,8 @@ node {
     stage('Test image') {
   
         cwk2.inside {
-            sh 'node --version'         
+            sh 'node --version'
+            sh 'docker ps'         
             sh 'echo "Tests passed"'
 
         }
