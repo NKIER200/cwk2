@@ -33,8 +33,8 @@ node {
     }
 
 stage('Update k8s deployment') {
- cwk2.inside {
+
  sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image deploy/nodejs-cwk2 nodejs-image-demontime2:latest"
-  }
+  
 }   
 }
