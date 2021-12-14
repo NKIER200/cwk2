@@ -1,7 +1,7 @@
 node {
     def cwk2
     def ip = "ip-172-31-18-127"
-    def ssh = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDF5UHCntgmyi3UFJN2Wu6crAm4ovJkbgGek1NndqVWQsM+W/fSt2b9G7kmDJRqzX3w1Ozj9J1xO1nUVNfGPVmLy9HKDSSTZ0vUEvzQsng7uFt3KiN9WeYc1cbnTeZUCCw0MZID8qEpJTomc3llPnMsV7gY19Jgi2hJdQrDTOry+z3RGdv6uF7Sgrz0JSvtle7saZWUDxLo6SC0hnWL5NtHD4rp4KxKwo2z+Q2QxZos7YO1hYFgrHGfgaN59SBuDEmmiWG8/GzVV5Ip8mUPSD/DkW+sLeEm7BmuVoYqvEaaph/DEGwZZIh7mrye2JRbbuKI93cQTHw2mTvI8uqkgwtp ubuntu@ip-172-31-18-127"
+    def ssh = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDF5UHCntgmyi3UFJN2Wu6crAm4ovJkbgGek1NndqVWQsM+W/fSt2b9G7kmDJRqzX3w1Ozj9J1xO1nUVNfGPVmLy9HKDSSTZ0vUEvzQsng7uFt3KiN9WeYc1cbnTeZUCCw0MZID8qEpJTomc3llPnMsV7gY19Jgi2hJdQrDTOry+z3RGdv6uF7Sgrz0JSvtle7saZWUDxLo6SC0hnWL5NtHD4rp4KxKwo2z+Q2QxZos7YO1hYFgrHGfgaN59SBuDEmmiWG8/GzVV5Ip8mUPSD/DkW+sLeEm7BmuVoYqvEaaph/DEGwZZIh7mrye2JRbbuKI93cQTHw2mTvI8uqkgwtp'
     def imageName = "nodejs-image-demontime2"
     def version = "latest" 
     stage('Clone repository') {
@@ -34,7 +34,7 @@ node {
 
 stage('Update k8s deployment') {
  cwk2.inside {
- sh "$ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image deploy/nodejs-cwk2 cwk2=$imageName:$version"
+ sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image deploy/nodejs-cwk2 cwk2=$imageName:$version"
   }
 }   
 }
