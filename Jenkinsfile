@@ -1,6 +1,6 @@
 node {
     def cwk2
-    def ip = "172-31-18-127"
+    def ip = "34.228.57.219"
     def imageName = "nodejs-image-demontime2"
     def version = "latest" 
     stage('Clone repository') {
