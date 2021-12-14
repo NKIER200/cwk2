@@ -22,7 +22,7 @@
     - name: 5. create service
       become: no
       shell:
-          cmd: kubectl expose deployment/kubernetes-cwk2 --type="NodePort" --port 8080 --name node-port-cwk2
+          cmd: kubectl expose deployment/kubernetes-cwk2 --type="NodePort" --port 80 --name node-port-cwk2
     - name: 6. get services
       become: no
       shell:
