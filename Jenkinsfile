@@ -1,7 +1,7 @@
 node {
     def cwk2
     def ip = "34.228.57.219"
-    def imageName = "nodejs-image-demontime2"
+    def imageName = "image-demontime2"
     def version = "latest" 
     stage('Clone repository') {
       
@@ -33,7 +33,7 @@ node {
 
 stage('Update k8s deployment') {
 
- sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set images deploy/nodejs-image-demontime2 cwk2=$imageName:$version"
+ sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set images deploy/nodejs-cwk2 cwk2=$imageName:$version"
   
 }   
 }
