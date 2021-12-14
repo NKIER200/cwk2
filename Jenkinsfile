@@ -1,7 +1,7 @@
 node {
     def cwk2
     def ip = "ip-172-31-18-127"
-    def ssh = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDF5UHCntgmyi3UFJN2Wu6crAm4ovJkbgGek1NndqVWQsM+W/fSt2b9G7kmDJRqzX3w1Ozj9J1xO1nUVNfGPVmLy9HKDSSTZ0vUEvzQsng7uFt3KiN9WeYc1cbnTeZUCCw0MZID8qEpJTomc3llPnMsV7gY19Jgi2hJdQrDTOry+z3RGdv6uF7Sgrz0JSvtle7saZWUDxLo6SC0hnWL5NtHD4rp4KxKwo2z+Q2QxZos7YO1hYFgrHGfgaN59SBuDEmmiWG8/GzVV5Ip8mUPSD/DkW+sLeEm7BmuVoYqvEaaph/DEGwZZIh7mrye2JRbbuKI93cQTHw2mTvI8uqkgwtpub untu@ip-172-31-18-127'
+    def ssh = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2cQnVL7g0YsJkR9h+fnv1TV1G4hUId00ue1d7qu+pFkK/ZkOZ+lcUsVYyf/RuasEYEGCvPzKtAbIvXnMVCtMAR/A3AOaVueNiXYJH5fD7xLqifbSEKIELzhTFWXBD1RnyQkJ6TM5AiQuJ6kJeDB+b/Sm56ocXi+gso8cj98it164EMeXp34Npb8o8+2jKEQjtHmbHlGLPUGh5JR+TYUnhObp8obnY0t+iTMXJLLn+fx0f9+wvn+fCGEsHNY/l6RtzvuGoW5U+0nOsz9niEvWkszu15Pk5kC1IEqRX8M/0g2kGxOy5u1mlviKTgVc0rdUVTZBzjrx/Jt7RawcKLu/t4mQzymO1AP4sUUGCnnKJlL6+m+q985t9CBec1GRvvDqTwQimweB/s/74tWFPw+JsYVGz2F2CXhQruh3ldzi9r/yx5VnwoKZi6ZecxSrieckiBEhzq+0f9rzzw6rHCAgAsa8ZhPaXF+vwKsZaTQoHu0GT5Z56dvWc9w5kzHII4IU= jenkins@e85b0f6064d1'
     def imageName = "nodejs-image-demontime2"
     def version = "latest" 
     stage('Clone repository') {
