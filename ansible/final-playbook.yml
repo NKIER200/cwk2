@@ -10,7 +10,7 @@
     - name: 2. create deployment
       become: no
       shell:
-          cmd: kubectl create deployment kubernetes-cwk2 --image=nkier200/nodejs-cwk2
+          cmd: kubectl create deployment kubernetes-cwk2 --image=nkier200/nodejs-cwk2:latest
     - name: 3. get deployments
       become: no
       shell:
