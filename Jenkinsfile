@@ -30,6 +30,12 @@ node {
         }
     }
     
+    stage('Pull new image') {
+
+        docker.withRegistry('https://registry.hub.docker.com', 'git') {
+            cwk2.pull("$version")
+        }
+    }
     stage('Update the deployment') {
 
     sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image deploy/kubernetes-cwk2 nodejs-image-demontime2=$imageName:$version}"
