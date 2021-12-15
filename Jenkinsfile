@@ -11,11 +11,11 @@ node {
 
     stage('Build image') {
   
-       cwk2 = docker.build("nodejs-image-demontime2=nkier200/nodejs-cwk2:$version")
+       cwk2 = docker.build("nkier200/nodejs-cwk2:$version")
     }
 
     stage('Test the image') {
-        cwk2.run()  
+        cwk2 = docker run --rm --name nodejs-image-demontime2  -p 80:80 -d nkier200/nodejs-cwk2:$version
         cwk2.inside {
             sh 'node --version'
             sh 'echo "Tests passed"'
@@ -32,7 +32,7 @@ node {
     
     stage('Update the deployment') {
 
-    sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image deploy/kubernetes-cwk2 nkier200/nodejs-cwk2=$imageName:$version}"
+    sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image deploy/kubernetes-cwk2 nodejs-cwk2=$imageName:$version}"
   
 }   
 }
