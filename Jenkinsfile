@@ -11,7 +11,7 @@ node {
 
     stage('Build image') {
   
-       cwk2 = docker.build("nkier200/nodejs-cwk2:${env.BUILD_NUMBER}")
+       cwk2 = docker.build("nkier200/nodejs-cwk2:$version")
     }
 
     stage('Test the image') {
@@ -26,13 +26,13 @@ node {
     stage('Push new image') {
         
         docker.withRegistry('https://registry.hub.docker.com', 'git') {
-            cwk2.push("${env.BUILD_NUMBER}")
+            cwk2.push("$version")
         }
     }
+    
+    stage('Update the deployment') {
 
-stage('Update the deployment') {
-
- sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image deploy/kubernetes-cwk2 nodejs-cwk2=$imageName:${env.BUILD_NUMBER}"
+    sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image deploy/kubernetes-cwk2 nodejs-cwk2=$imageName:$version}"
   
 }   
 }
