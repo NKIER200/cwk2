@@ -2,7 +2,7 @@ node {
     def cwk2
     def ip = "34.228.57.219"
     def imageName = "nodejs-image-demontime2"
-    def version = "latest" 
+    def version = "latestvid" 
     stage('Clone repository') {
       
 
@@ -26,7 +26,7 @@ node {
     stage('Push new image') {
         
         docker.withRegistry('https://registry.hub.docker.com', 'git') {
-            cwk2.push("latest")
+            cwk2.push("$version")
         }
     }
 
