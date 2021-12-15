@@ -15,7 +15,7 @@ node {
     }
 
     stage('Test the image') {
-        cwk2 = docker run --rm --name nodejs-image-demontime2  -p 80:80 -d nkier200/nodejs-cwk2:$version
+        cwk2 = docker.run("--rm --name nodejs-image-demontime2  -p 80:80 -d nkier200/nodejs-cwk2:$version")
         cwk2.inside {
             sh 'node --version'
             sh 'echo "Tests passed"'
