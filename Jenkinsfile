@@ -2,7 +2,7 @@ node {
     def cwk2
     def ip = "34.228.57.219"
     def imageName = "nkier200/nodejs-cwk2"
-    def version = "latest5ft4" 
+    def version = "latest6ft11" 
     stage('Clone repository') {
       
 
