@@ -26,7 +26,6 @@ node {
     stage('Push new image') {
         
         docker.withRegistry('https://registry.hub.docker.com', 'git') {
-            cwk2.push("${env.BUILD_NUMBER}")
             cwk2.push("latest")
         }
     }
