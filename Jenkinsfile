@@ -14,7 +14,7 @@ node {
        cwk2 = docker.build("nkier200/nodejs-cwk2")
     }
 
-    stage('Test image') {
+    stage('Test the image') {
         cwk2.run()  
         cwk2.inside {
             sh 'node --version'
@@ -23,7 +23,7 @@ node {
         }
     }
 
-    stage('Push image') {
+    stage('Push new image') {
         
         docker.withRegistry('https://registry.hub.docker.com', 'git') {
             cwk2.push("${env.BUILD_NUMBER}")
@@ -31,7 +31,7 @@ node {
         }
     }
 
-stage('Update k8s deployment') {
+stage('Update the deployment') {
 
  sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image deploy/kubernetes-cwk2 nodejs-cwk2=$imageName:$version"
   
