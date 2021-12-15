@@ -11,7 +11,7 @@ node {
 
     stage('Build image') {
   
-       cwk2 = docker.build("nkier200/nodejs-cwk2:$version")
+       cwk2 = docker.build("nodejs-image-demontime2=nkier200/nodejs-cwk2:$version")
     }
 
     stage('Test the image') {
