@@ -1,17 +1,4 @@
-FROM node:10-alpine
-
-RUN mkdir -p /cwk2/node_modules && chown -R node:node /cwk2
-
-WORKDIR /cwk2
-
-COPY package*.json ./
-
-USER node
-
-RUN npm install
-
-COPY --chown=node:node . .
-
+FROM node:6.14.2
 EXPOSE 80
-
-CMD [ "node", "server.js" ]
+COPY server.js .
+CMD node server.js
