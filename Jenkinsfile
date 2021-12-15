@@ -32,7 +32,7 @@ node {
     
     stage('Update the deployment') {
 
-    sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image deploy/kubernetes-cwk2 nodejs-cwk2=$imageName:$version}"
+    sh "ssh -o StrictHostKeyChecking=no ubuntu@$ip kubectl set image deploy/kubernetes-cwk2 nkier200/nodejs-cwk2=$imageName:$version}"
   
 }   
 }
